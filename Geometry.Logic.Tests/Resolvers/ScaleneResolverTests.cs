@@ -3,7 +3,7 @@ using Geometry.Abstractions.Triangle;
 using Geometry.Logic.Resolvers;
 using Xunit;
 
-namespace Geometry.Logic.Tests
+namespace Geometry.Logic.Tests.Resolvers
 {
     public class ScaleneResolverTests
     {

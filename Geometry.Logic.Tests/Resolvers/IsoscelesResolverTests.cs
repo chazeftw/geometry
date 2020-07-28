@@ -3,22 +3,22 @@ using Geometry.Abstractions.Triangle;
 using Geometry.Logic.Resolvers;
 using Xunit;
 
-namespace Geometry.Logic.Tests
+namespace Geometry.Logic.Tests.Resolvers
 {
-    public class EquilateralResolverTests
+    public class IsoscelesResolverTests
     {
         [Fact]
         public void Given_triangle_When_three_sides_are_equal_length_Then_return_equilateral()
         {
             // Arrange
-            var triangle = new Triangle(1, 1 ,1);
-            var equilateralResolver = new EquilateralResolver();
-            
+            var triangle = new Triangle(1, 1, 1);
+            var isoscelesResolver = new IsoscelesResolver();
+
             // Act
-            var type = equilateralResolver.ResolveType(triangle);
+            var type = isoscelesResolver.ResolveType(triangle);
 
             // Assert
-            type.Should().Be(TriangleType.Equilateral);
+            type.Should().NotBe(TriangleType.Isosceles);
         }
 
         [Fact]
@@ -26,13 +26,13 @@ namespace Geometry.Logic.Tests
         {
             // Arrange
             var triangle = new Triangle(1, 1, 2);
-            var equilateralResolver = new EquilateralResolver();
+            var isoscelesResolver = new IsoscelesResolver();
 
             // Act
-            var type = equilateralResolver.ResolveType(triangle);
+            var type = isoscelesResolver.ResolveType(triangle);
 
             // Assert
-            type.Should().NotBe(TriangleType.Equilateral);
+            type.Should().Be(TriangleType.Isosceles);
         }
 
         [Fact]
@@ -40,13 +40,13 @@ namespace Geometry.Logic.Tests
         {
             // Arrange
             var triangle = new Triangle(1, 5, 2);
-            var equilateralResolver = new EquilateralResolver();
+            var isoscelesResolver = new IsoscelesResolver();
 
             // Act
-            var type = equilateralResolver.ResolveType(triangle);
+            var type = isoscelesResolver.ResolveType(triangle);
 
             // Assert
-            type.Should().NotBe(TriangleType.Equilateral);
+            type.Should().NotBe(TriangleType.Isosceles);
         }
     }
 }

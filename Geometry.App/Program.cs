@@ -25,8 +25,7 @@ namespace Geometry.App
 
             IServiceProvider serviceProvider = serviceCollection.BuildServiceProvider();
 
-            // Start service
-            serviceProvider.GetService<App>().Start();
+            serviceProvider.GetService<App>().Run();
         }
     }
 }

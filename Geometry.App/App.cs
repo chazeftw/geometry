@@ -15,7 +15,7 @@ namespace Geometry.App
             _triangleTypeService = triangleTypeService;
         }
 
-        public void Start()
+        public void Run()
         {
             Console.WriteLine("Please input 3 sides of a triangle");
 
@@ -23,7 +23,7 @@ namespace Geometry.App
 
             var triangleTypes = _triangleTypeService.GetTypes(triangle);
 
-            Console.WriteLine("The triangle is the following type:"); 
+            Console.WriteLine("The triangle is the following type:");
             Console.WriteLine(triangleTypes.Single());
         }
 
