@@ -6,13 +6,13 @@ namespace Geometry.Logic
     {
         public Triangle(uint sideA, uint sideB, uint sideC)
         {
-            SideA = sideA;
-            SideB = sideB;
-            SideC = sideC;
+            A = sideA;
+            B = sideB;
+            C = sideC;
         }
 
-        public uint SideA { get; }
-        public uint SideB { get; }
-        public uint SideC { get; }
+        public uint A { get; }
+        public uint B { get; }
+        public uint C { get; }
     }
 }

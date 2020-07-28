@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using Geometry.Abstractions.Triangle;
 using Geometry.App.Utility;
 using Geometry.Logic;
 
@@ -15,7 +13,8 @@ namespace Geometry.App
 
             var triangle = GetTriangleFromInput();
 
-            var triangleTypes = GetTypes(triangle);
+            var typeService = new TriangleTypeService();
+            var triangleTypes = typeService.GetTypes(triangle);
 
             Console.WriteLine("The triangle is the following type:"); 
             Console.WriteLine(triangleTypes.Single());
@@ -30,17 +29,6 @@ namespace Geometry.App
             var triangle = new Triangle(a, b, c);
 
             return triangle;
-        }
-
-        private static IEnumerable<TriangleType> GetTypes(Triangle triangle)
-        {
-            var factory = new TriangleResolverFactory();
-            var resolvers = factory.CreateResolvers();
-
-            return resolvers
-                .Select(resolver => resolver.ResolveType(triangle))
-                .Where(type => type != TriangleType.None)
-                .ToList();
         }
 
         private static uint GetSideFromConsole(string message)
