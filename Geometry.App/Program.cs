@@ -1,6 +1,7 @@
 ﻿using System;
 using Geometry.Abstractions.Triangle;
 using Geometry.Logic;
+using Geometry.Logic.Resolvers;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Geometry.App
