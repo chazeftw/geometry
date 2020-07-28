@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Geometry.Abstractions;
+using Geometry.Abstractions.Triangle;
 using Geometry.Logic.Resolvers;
 
 namespace Geometry.Logic

@@ -1,4 +1,4 @@
-﻿namespace Geometry.Abstractions
+﻿namespace Geometry.Abstractions.Triangle
 {
     public enum TriangleType
     {

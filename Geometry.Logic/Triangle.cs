@@ -1,4 +1,4 @@
-﻿using Geometry.Abstractions;
+﻿using Geometry.Abstractions.Triangle;
 
 namespace Geometry.Logic
 {

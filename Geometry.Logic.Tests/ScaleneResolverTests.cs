@@ -1,9 +1,8 @@
-using System;
 using Xunit;
 
 namespace Geometry.Logic.Tests
 {
-    public class UnitTest1
+    public class ScaleneResolverTests
     {
         [Fact]
         public void Test1()
