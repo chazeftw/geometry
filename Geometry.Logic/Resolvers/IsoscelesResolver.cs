@@ -6,13 +6,16 @@ namespace Geometry.Logic.Resolvers
     {
         public TriangleType ResolveType(ITriangle triangle)
         {
-            var isoscelesRequirements = (triangle.SideA == triangle.SideB && triangle.SideA != triangle.SideC)
-                                        || (triangle.SideB == triangle.SideC && triangle.SideB != triangle.SideA)
-                                        || (triangle.SideC == triangle.SideA && triangle.SideC != triangle.SideB);
+            var isIsosceles = (triangle.A == triangle.B && triangle.A != triangle.C)
+                                  || (triangle.B == triangle.C && triangle.B != triangle.A)
+                                  || (triangle.C == triangle.A && triangle.C != triangle.B);
 
-            return isoscelesRequirements 
-                ? TriangleType.Isosceles 
-                : TriangleType.None;
+            if (isIsosceles)
+            {
+                return TriangleType.Isosceles;
+            }
+
+            return TriangleType.None;
         }
     }
 }

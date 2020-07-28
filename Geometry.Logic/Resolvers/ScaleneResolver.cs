@@ -6,13 +6,16 @@ namespace Geometry.Logic.Resolvers
     {
         public TriangleType ResolveType(ITriangle triangle)
         {
-            var scaleneRequirements = triangle.SideA != triangle.SideB 
-                                      && triangle.SideB != triangle.SideC 
-                                      && triangle.SideC != triangle.SideA;
+            var isScalene = triangle.A != triangle.B
+                                && triangle.B != triangle.C
+                                && triangle.C != triangle.A;
 
-            return scaleneRequirements 
-                ? TriangleType.Scalene 
-                : TriangleType.None;
+            if (isScalene)
+            {
+                return TriangleType.Scalene;
+            }
+
+            return TriangleType.None;
         }
     }
 }

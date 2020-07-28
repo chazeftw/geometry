@@ -9,7 +9,14 @@
                 return false;
             }
 
-            return uint.TryParse(side, out _);
+            var canParse = uint.TryParse(side, out var sideValue);
+
+            if (sideValue == 0)
+            {
+                return false;
+            }
+
+            return canParse;
         }
     }
 }

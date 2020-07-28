@@ -6,12 +6,15 @@ namespace Geometry.Logic.Resolvers
     {
         public TriangleType ResolveType(ITriangle triangle)
         {
-            var isEquilateral = triangle.SideA == triangle.SideB 
-                                && triangle.SideB == triangle.SideC;
+            var isEquilateral = triangle.A == triangle.B 
+                                    && triangle.B == triangle.C;
 
-            return isEquilateral 
-                ? TriangleType.Equilateral 
-                : TriangleType.None;
+            if (isEquilateral)
+            {
+                return TriangleType.Equilateral;
+            }
+
+            return TriangleType.None;
         }
     }
 }

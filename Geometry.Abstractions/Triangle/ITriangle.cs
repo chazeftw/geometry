@@ -2,8 +2,8 @@
 {
     public interface ITriangle
     {
-        uint SideA { get; }
-        uint SideB { get; }
-        uint SideC { get; }
+        uint A { get; }
+        uint B { get; }
+        uint C { get; }
     }
 }
