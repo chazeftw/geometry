@@ -4,11 +4,11 @@ namespace Geometry.Logic
 {
     public class Triangle : ITriangle
     {
-        public Triangle(uint sideA, uint sideB, uint sideC)
+        public Triangle(uint a, uint b, uint c)
         {
-            A = sideA;
-            B = sideB;
-            C = sideC;
+            A = a;
+            B = b;
+            C = c;
         }
 
         public uint A { get; }
