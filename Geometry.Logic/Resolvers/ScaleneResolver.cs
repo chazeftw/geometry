@@ -12,7 +12,7 @@ namespace Geometry.Logic.Resolvers
 
             return scaleneRequirements 
                 ? TriangleType.Scalene 
-                : TriangleType.NotSupported;
+                : TriangleType.None;
         }
     }
 }

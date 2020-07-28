@@ -7,12 +7,11 @@ namespace Geometry.Logic.Resolvers
         public TriangleType ResolveType(ITriangle triangle)
         {
             var isEquilateral = triangle.SideA == triangle.SideB 
-                                && triangle.SideB == triangle.SideC 
-                                && triangle.SideC == triangle.SideA;
+                                && triangle.SideB == triangle.SideC;
 
             return isEquilateral 
                 ? TriangleType.Equilateral 
-                : TriangleType.NotSupported;
+                : TriangleType.None;
         }
     }
 }
