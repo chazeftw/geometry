@@ -10,13 +10,14 @@ namespace Geometry.Logic.Tests
     public class TriangleTypeServiceTests
     {
         [Fact]
-        public void Given_only_one_resolver_When_triangle_is_isosceles_type_Then_return_isosceles()
+        public void Given_two_resolvers_When_triangle_is_isosceles_type_Then_return_isosceles()
         {
             // Arrange
             var factoryMock = new Mock<ITriangleResolverFactory>();
             factoryMock.Setup(x => x.CreateResolvers()).Returns(new List<ITriangleTypeResolver>
             {
-                new IsoscelesResolver()
+                new IsoscelesResolver(),
+                new ScaleneResolver(),
             });
 
             var triangleTypeService = new TriangleTypeService(factoryMock.Object);
@@ -30,6 +31,27 @@ namespace Geometry.Logic.Tests
 
             // Assert
             types.Should().BeEquivalentTo(expectedTypes);
+        }
+
+        [Fact]
+        public void Given_isosceles_resolver_When_triangle_is_scalene_type_Then_return_no_matching_type()
+        {
+            // Arrange
+            var factoryMock = new Mock<ITriangleResolverFactory>();
+            factoryMock.Setup(x => x.CreateResolvers()).Returns(new List<ITriangleTypeResolver>
+            {
+                new IsoscelesResolver()
+            });
+
+            var triangleTypeService = new TriangleTypeService(factoryMock.Object);
+
+            var triangle = new Triangle(1, 1, 1);
+
+            // Act
+            var types = triangleTypeService.GetTypes(triangle);
+
+            // Assert
+            types.Should().BeEmpty();
         }
     }
 }
