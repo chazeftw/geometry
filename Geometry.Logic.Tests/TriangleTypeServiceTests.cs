@@ -34,18 +34,18 @@ namespace Geometry.Logic.Tests
         }
 
         [Fact]
-        public void Given_isosceles_resolver_When_triangle_is_scalene_type_Then_return_no_matching_type()
+        public void Given_equilateral_resolver_When_triangle_is_scalene_type_Then_return_no_matching_type()
         {
             // Arrange
             var factoryMock = new Mock<ITriangleResolverFactory>();
             factoryMock.Setup(x => x.CreateResolvers()).Returns(new List<ITriangleTypeResolver>
             {
-                new IsoscelesResolver()
+                new EquilateralResolver()
             });
 
             var triangleTypeService = new TriangleTypeService(factoryMock.Object);
 
-            var triangle = new Triangle(1, 1, 1);
+            var triangle = new Triangle(2, 4, 3);
 
             // Act
             var types = triangleTypeService.GetTypes(triangle);
