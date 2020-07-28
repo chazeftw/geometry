@@ -7,7 +7,7 @@ namespace Geometry.Logic
     {
         public Triangle(uint a, uint b, uint c)
         {
-            if (IsValidTriangle(a, b, c))
+            if (!IsValidTriangle(a, b, c))
             {
                 throw new ArgumentException("Triangle measurements invalid");
             }
@@ -19,7 +19,7 @@ namespace Geometry.Logic
 
         private bool IsValidTriangle(uint a, uint b, uint c)
         {
-            return a + b <= c && a + c <= b && b + c <= a;
+            return a + b > c && a + c > b && b + c > a;
         }
 
         public uint A { get; }

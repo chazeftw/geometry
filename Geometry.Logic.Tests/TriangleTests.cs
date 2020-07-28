@@ -8,7 +8,7 @@ namespace Geometry.Logic.Tests
         [Fact]
         public void Given_triangle_When_measurements_invalid_Then_throw_argument_exception()
         {
-            Assert.Throws<ArgumentException>(() => new Triangle(0, 0, 0));
+            Assert.Throws<ArgumentException>(() => new Triangle(1, 10, 12));
         }
     }
 }
