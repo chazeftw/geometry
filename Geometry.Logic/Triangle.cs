@@ -1,4 +1,5 @@
-﻿using Geometry.Abstractions.Triangle;
+﻿using System;
+using Geometry.Abstractions.Triangle;
 
 namespace Geometry.Logic
 {
@@ -6,9 +7,19 @@ namespace Geometry.Logic
     {
         public Triangle(uint a, uint b, uint c)
         {
+            if (IsValidTriangle(a, b, c))
+            {
+                throw new ArgumentException("Triangle measurements invalid");
+            }
+
             A = a;
             B = b;
             C = c;
+        }
+
+        private bool IsValidTriangle(uint a, uint b, uint c)
+        {
+            return a + b <= c && a + c <= b && b + c <= a;
         }
 
         public uint A { get; }
