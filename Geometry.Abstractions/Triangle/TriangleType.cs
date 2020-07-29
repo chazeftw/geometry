@@ -2,7 +2,6 @@
 {
     public enum TriangleType
     {
-        None,
         Scalene,
         Isosceles,
         Equilateral

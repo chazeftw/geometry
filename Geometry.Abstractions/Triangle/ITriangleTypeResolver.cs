@@ -2,6 +2,6 @@
 {
     public interface ITriangleTypeResolver
     {
-        TriangleType ResolveType(ITriangle triangle);
+        ITriangleTypeMatch ResolveType(ITriangle triangle);
     }
 }

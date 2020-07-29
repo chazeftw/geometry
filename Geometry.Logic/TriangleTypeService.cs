@@ -17,11 +17,14 @@ namespace Geometry.Logic
         {
             var resolvers = _factory.CreateResolvers();
 
-            return resolvers
-                .Select(resolver => resolver.ResolveType(triangle))
-                .Where(type => type != TriangleType.None)
+            var types = resolvers
+                .Select(triangleTypeResolver => triangleTypeResolver.ResolveType(triangle))
+                .ToList();
+
+            return types
+                .Where(match => match.IsMatch)
+                .Select(type => type.Type)
                 .ToList();
         }
-
     }
 }

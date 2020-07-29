@@ -4,17 +4,12 @@ namespace Geometry.Logic.Resolvers
 {
     public class EquilateralResolver : ITriangleTypeResolver
     {
-        public TriangleType ResolveType(ITriangle triangle)
+        public ITriangleTypeMatch ResolveType(ITriangle triangle)
         {
-            var isEquilateral = triangle.A == triangle.B 
+            var isEquilateral = triangle.A == triangle.B
                                     && triangle.B == triangle.C;
 
-            if (isEquilateral)
-            {
-                return TriangleType.Equilateral;
-            }
-
-            return TriangleType.None;
+            return new TriangleTypeMatch(TriangleType.Equilateral, isEquilateral);
         }
     }
 }

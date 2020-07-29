@@ -22,7 +22,7 @@ namespace Geometry.Logic.Tests
 
             var triangleTypeService = new TriangleTypeService(factoryMock.Object);
 
-            var triangle = new Triangle(1, 1, 2);
+            var triangle = new Triangle(3, 3, 2);
 
             var expectedTypes = new List<TriangleType> { TriangleType.Isosceles };
 
