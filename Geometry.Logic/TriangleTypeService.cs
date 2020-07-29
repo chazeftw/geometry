@@ -13,18 +13,16 @@ namespace Geometry.Logic
             _factory = factory;
         }
 
-        public IEnumerable<TriangleType> GetTypes(ITriangle triangle)
+        public IEnumerable<TriangleType> DetermineTypes(ITriangle triangle)
         {
             var resolvers = _factory.CreateResolvers();
 
             var types = resolvers
-                .Select(triangleTypeResolver => triangleTypeResolver.ResolveType(triangle))
-                .ToList();
+                .Select(triangleTypeResolver => triangleTypeResolver.ResolveType(triangle));
 
             return types
                 .Where(match => match.IsMatch)
-                .Select(type => type.Type)
-                .ToList();
+                .Select(type => type.Type);
         }
     }
 }

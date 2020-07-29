@@ -4,6 +4,6 @@ namespace Geometry.Abstractions.Triangle
 {
     public interface ITriangleTypeService
     {
-        IEnumerable<TriangleType> GetTypes(ITriangle triangle);
+        IEnumerable<TriangleType> DetermineTypes(ITriangle triangle);
     }
 }
