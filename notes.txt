@@ -20,6 +20,4 @@ Overvej test, validering og mulige fejl.
 - Factory
 - Dependency injection til service
 
-# Demo
-
-# Kode
+# Demo / Kode
