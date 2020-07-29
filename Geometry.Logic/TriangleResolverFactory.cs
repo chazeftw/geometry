@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using Geometry.Abstractions.Triangle;
+using Geometry.Logic.Resolvers;
 
-namespace Geometry.Logic.Resolvers
+namespace Geometry.Logic
 {
     public class TriangleResolverFactory : ITriangleResolverFactory
     {

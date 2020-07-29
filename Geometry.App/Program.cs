@@ -15,18 +15,28 @@ namespace Geometry.App
 
         private static void StartService()
         {
+            var serviceProvider = GetServiceProvider();
+
+            serviceProvider.GetService<App>().Run();
+        }
+
+        private static IServiceProvider GetServiceProvider()
+        {
             var serviceCollection = new ServiceCollection();
 
-            // Add app
-            serviceCollection.AddTransient<App>();
-
-            // Add services
-            serviceCollection.AddScoped<ITriangleResolverFactory, TriangleResolverFactory>();
-            serviceCollection.AddScoped<ITriangleTypeService, TriangleTypeService>();
+            AddDependencies(serviceCollection);
 
             IServiceProvider serviceProvider = serviceCollection.BuildServiceProvider();
 
-            serviceProvider.GetService<App>().Run();
+            return serviceProvider;
+        }
+
+        private static void AddDependencies(IServiceCollection serviceCollection)
+        {
+            serviceCollection.AddTransient<App>();
+
+            serviceCollection.AddScoped<ITriangleResolverFactory, TriangleResolverFactory>();
+            serviceCollection.AddScoped<ITriangleTypeService, TriangleTypeService>();
         }
     }
 }

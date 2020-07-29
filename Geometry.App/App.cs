@@ -32,27 +32,47 @@ namespace Geometry.App
 
         private static Triangle GetTriangleFromInput()
         {
-            var a = GetSideFromConsole("A: ");
-            var b = GetSideFromConsole("B: ");
-            var c = GetSideFromConsole("C: ");
+            uint a, b, c;
 
-            var triangle = new Triangle(a, b, c);
+            do
+            {
+                a = GetSideFromConsole("A: ");
+                b = GetSideFromConsole("B: ");
+                c = GetSideFromConsole("C: ");
 
-            return triangle;
+            } while (!CanCreateValidTriangle(a, b, c));
+
+            return new Triangle(a, b, c);
         }
 
-        private static uint GetSideFromConsole(string message)
+        private static uint GetSideFromConsole(string inputMessage)
         {
             string side;
 
             do
             {
-                Console.Write(message);
+                Console.Write(inputMessage);
                 side = Console.ReadLine();
 
             } while (!InputValidator.IsValidTriangleSide(side));
 
             return uint.Parse(side);
+        }
+
+        private static bool CanCreateValidTriangle(uint a, uint b, uint c)
+        {
+            try
+            {
+                var triangle = new Triangle(a, b, c);
+
+                return true;
+            }
+            catch (ArgumentException)
+            {
+                Console.WriteLine("Measurements does not form a valid triangle. Please try again.");
+
+                return false;
+            }
         }
     }
 }
