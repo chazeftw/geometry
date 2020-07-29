@@ -14,12 +14,12 @@ namespace Geometry.App
 
         private static void StartService()
         {
-            var serviceProvider = GetServiceProvider();
+            var serviceProvider = BuildServiceProvider();
 
             serviceProvider.GetService<App>().Run();
         }
 
-        private static IServiceProvider GetServiceProvider()
+        private static IServiceProvider BuildServiceProvider()
         {
             var serviceCollection = new ServiceCollection();
 
