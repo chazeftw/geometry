@@ -35,7 +35,7 @@ namespace Geometry.App
         {
             serviceCollection.AddTransient<App>();
 
-            serviceCollection.AddScoped<ITriangleResolverFactory, TriangleResolverFactory>();
+            serviceCollection.AddScoped<ITriangleTypeResolverFactory, TriangleTypeResolverFactory>();
             serviceCollection.AddScoped<ITriangleTypeService, TriangleTypeService>();
         }
     }

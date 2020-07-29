@@ -13,7 +13,7 @@ namespace Geometry.Logic.Tests
         public void Given_two_resolvers_When_triangle_is_isosceles_type_Then_return_isosceles()
         {
             // Arrange
-            var factoryMock = new Mock<ITriangleResolverFactory>();
+            var factoryMock = new Mock<ITriangleTypeResolverFactory>();
             factoryMock.Setup(x => x.CreateResolvers()).Returns(new List<ITriangleTypeResolver>
             {
                 new IsoscelesResolver(),
@@ -37,7 +37,7 @@ namespace Geometry.Logic.Tests
         public void Given_equilateral_resolver_When_triangle_is_scalene_type_Then_return_no_matching_type()
         {
             // Arrange
-            var factoryMock = new Mock<ITriangleResolverFactory>();
+            var factoryMock = new Mock<ITriangleTypeResolverFactory>();
             factoryMock.Setup(x => x.CreateResolvers()).Returns(new List<ITriangleTypeResolver>
             {
                 new EquilateralResolver()

@@ -6,9 +6,9 @@ namespace Geometry.Logic
 {
     public class TriangleTypeService : ITriangleTypeService
     {
-        private readonly ITriangleResolverFactory _factory;
+        private readonly ITriangleTypeResolverFactory _factory;
 
-        public TriangleTypeService(ITriangleResolverFactory factory)
+        public TriangleTypeService(ITriangleTypeResolverFactory factory)
         {
             _factory = factory;
         }
