@@ -27,7 +27,7 @@ namespace Geometry.Logic.Tests
             var expectedTypes = new List<TriangleType> { TriangleType.Isosceles };
 
             // Act
-            var types = triangleTypeService.GetTypes(triangle);
+            var types = triangleTypeService.DetermineTypes(triangle);
 
             // Assert
             types.Should().BeEquivalentTo(expectedTypes);
@@ -48,7 +48,7 @@ namespace Geometry.Logic.Tests
             var triangle = new Triangle(2, 4, 3);
 
             // Act
-            var types = triangleTypeService.GetTypes(triangle);
+            var types = triangleTypeService.DetermineTypes(triangle);
 
             // Assert
             types.Should().BeEmpty();

@@ -21,7 +21,7 @@ namespace Geometry.App
 
             var triangle = GetTriangleFromInput();
 
-            var triangleTypes = _triangleTypeService.GetTypes(triangle);
+            var triangleTypes = _triangleTypeService.DetermineTypes(triangle);
 
             Console.WriteLine($"The triangle is the following type{(triangleTypes.Count() > 1 ? "s" : string.Empty)}:");
             foreach (var triangleType in triangleTypes)
