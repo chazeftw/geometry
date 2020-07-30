@@ -8,16 +8,19 @@ Løsningen skal tage de tre sider som input parameter og returnere om trekanten 
 Overvej test, validering og mulige fejl.
 
 # Approach
-- Time spent
 - Åben krav spec
 - Tænk fremad
 
 # Projekter
 - Deres ansvar
 
+# Tests
+- xUnit
+- FluentAssertions
+
 # Teknikker
 - Resolvers
 - Factory
-- Dependency injection til service
+- Dependency injection
 
 # Demo / Kode

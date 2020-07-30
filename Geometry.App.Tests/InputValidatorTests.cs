@@ -9,6 +9,7 @@ namespace Geometry.App.Tests
         [Theory]
         [InlineData("1", true)]
         [InlineData("-1", false)]
+        [InlineData("0", false)]
         [InlineData("", false)]
         [InlineData("asdf", false)]
         [InlineData(null, false)]
