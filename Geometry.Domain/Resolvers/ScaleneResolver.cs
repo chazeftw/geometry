@@ -1,6 +1,4 @@
-﻿using ITriangle = Geometry.Domain.Abstractions.ITriangle;
-using ITriangleTypeMatch = Geometry.Domain.Abstractions.ITriangleTypeMatch;
-using ITriangleTypeResolver = Geometry.Domain.Abstractions.ITriangleTypeResolver;
+﻿using Geometry.Domain.Abstractions;
 
 namespace Geometry.Domain.Resolvers;
 

@@ -1,5 +1,5 @@
 ﻿using System;
-using ITriangle = Geometry.Domain.Abstractions.ITriangle;
+using Geometry.Domain.Abstractions;
 
 namespace Geometry.Domain;
 

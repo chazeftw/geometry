@@ -3,6 +3,7 @@ using FluentAssertions;
 using Geometry.Domain;
 using Geometry.Domain.Abstractions;
 using Geometry.Domain.Resolvers;
+using Geometry.Domain.Services;
 using Moq;
 using Xunit;
 

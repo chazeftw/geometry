@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ITriangle = Geometry.Domain.Abstractions.ITriangle;
-using ITriangleTypeResolverFactory = Geometry.Domain.Abstractions.ITriangleTypeResolverFactory;
-using ITriangleTypeService = Geometry.Domain.Abstractions.ITriangleTypeService;
+using Geometry.Domain.Abstractions;
 
-namespace Geometry.Domain;
+namespace Geometry.Domain.Services;
 
 public class TriangleTypeService : ITriangleTypeService
 {

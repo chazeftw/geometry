@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
 using Geometry.Domain.Resolvers;
-using ITriangleTypeResolver = Geometry.Domain.Abstractions.ITriangleTypeResolver;
-using ITriangleTypeResolverFactory = Geometry.Domain.Abstractions.ITriangleTypeResolverFactory;
+using Geometry.Domain.Abstractions;
 
-namespace Geometry.Domain;
+namespace Geometry.Domain.Factories;
 
 public class TriangleTypeResolverFactory : ITriangleTypeResolverFactory
 {
-    public IEnumerable<ITriangleTypeResolver> CreateResolvers()
+    public IReadOnlyCollection<ITriangleTypeResolver> CreateResolvers()
     {
         var resolvers = new List<ITriangleTypeResolver>
         {

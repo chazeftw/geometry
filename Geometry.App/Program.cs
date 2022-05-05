@@ -1,6 +1,8 @@
 ﻿using System;
 using Geometry.Domain;
 using Geometry.Domain.Abstractions;
+using Geometry.Domain.Factories;
+using Geometry.Domain.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Geometry.App;

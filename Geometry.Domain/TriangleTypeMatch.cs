@@ -1,4 +1,4 @@
-﻿using ITriangleTypeMatch = Geometry.Domain.Abstractions.ITriangleTypeMatch;
+﻿using Geometry.Domain.Abstractions;
 
 namespace Geometry.Domain;
 
