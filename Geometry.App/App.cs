@@ -52,7 +52,7 @@ namespace Geometry.App
             do
             {
                 Console.Write(inputMessage);
-                side = Console.ReadLine();
+                side = Console.ReadLine()!;
 
             } while (!InputValidator.IsValidTriangleSide(side));
 

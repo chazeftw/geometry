@@ -11,7 +11,7 @@ namespace Geometry.Logic.Tests.Resolvers
         public void Given_triangle_When_three_sides_are_equal_length_Then_return_equilateral()
         {
             // Arrange
-            var triangle = new Triangle(1, 1 ,1);
+            var triangle = new Triangle(1, 1 , 1);
             var equilateralResolver = new EquilateralResolver();
             var expectedResult = new TriangleTypeMatch(TriangleType.Equilateral, true);
 

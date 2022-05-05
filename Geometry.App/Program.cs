@@ -5,9 +5,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Geometry.App
 {
-    internal class Program
+    internal static class Program
     {
-        static void Main()
+        private static void Main()
         {
             StartService();
         }
@@ -16,7 +16,7 @@ namespace Geometry.App
         {
             var serviceProvider = BuildServiceProvider();
 
-            serviceProvider.GetService<App>().Run();
+            serviceProvider.GetService<App>()!.Run();
         }
 
         private static IServiceProvider BuildServiceProvider()
