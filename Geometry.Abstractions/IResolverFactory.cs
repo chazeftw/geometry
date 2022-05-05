@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace Geometry.Abstractions
+namespace Geometry.Abstractions;
+
+public interface IResolverFactory<T>
 {
-    public interface IResolverFactory<T>
-    {
-        IEnumerable<T> CreateResolvers();
-    }
+    IEnumerable<T> CreateResolvers();
 }

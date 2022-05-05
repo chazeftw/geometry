@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Geometry.Logic\Geometry.Logic.csproj" />
+    <ProjectReference Include="..\Geometry.Domain\Geometry.Domain.csproj" />
   </ItemGroup>
 
 </Project>

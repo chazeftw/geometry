@@ -1,0 +1,14 @@
+﻿using System;
+using Geometry.Domain;
+using Xunit;
+
+namespace Geometry.Logic.Tests;
+
+public class TriangleTests
+{
+    [Fact]
+    public void Given_triangle_When_measurements_invalid_Then_throw_argument_exception()
+    {
+        Assert.Throws<ArgumentException>(() => new Triangle(1, 10, 12));
+    }
+}

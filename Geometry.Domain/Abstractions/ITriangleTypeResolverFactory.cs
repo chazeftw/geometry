@@ -1,4 +1,4 @@
-﻿namespace Geometry.Abstractions.Triangle;
+﻿namespace Geometry.Domain.Abstractions;
 
 public interface ITriangleTypeResolverFactory : IResolverFactory<ITriangleTypeResolver>
 { }

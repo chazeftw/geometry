@@ -1,9 +1,8 @@
-﻿namespace Geometry.Abstractions.Triangle
+﻿namespace Geometry.Abstractions.Triangle;
+
+public enum TriangleType
 {
-    public enum TriangleType
-    {
-        Scalene,
-        Isosceles,
-        Equilateral
-    }
+    Scalene,
+    Isosceles,
+    Equilateral
 }

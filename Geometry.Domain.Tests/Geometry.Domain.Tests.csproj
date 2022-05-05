@@ -4,6 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <RootNamespace>Geometry.Logic.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Geometry.Logic\Geometry.Logic.csproj" />
+    <ProjectReference Include="..\Geometry.Domain\Geometry.Domain.csproj" />
   </ItemGroup>
 
 </Project>

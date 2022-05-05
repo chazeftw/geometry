@@ -1,41 +1,40 @@
 ﻿using System;
-using Geometry.Abstractions.Triangle;
-using Geometry.Logic;
+using Geometry.Domain;
+using Geometry.Domain.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Geometry.App
+namespace Geometry.App;
+
+internal static class Program
 {
-    internal static class Program
+    private static void Main()
     {
-        private static void Main()
-        {
-            StartService();
-        }
+        StartService();
+    }
 
-        private static void StartService()
-        {
-            var serviceProvider = BuildServiceProvider();
+    private static void StartService()
+    {
+        var serviceProvider = BuildServiceProvider();
 
-            serviceProvider.GetService<App>()!.Run();
-        }
+        serviceProvider.GetService<App>()!.Run();
+    }
 
-        private static IServiceProvider BuildServiceProvider()
-        {
-            var serviceCollection = new ServiceCollection();
+    private static IServiceProvider BuildServiceProvider()
+    {
+        var serviceCollection = new ServiceCollection();
 
-            AddDependencies(serviceCollection);
+        AddDependencies(serviceCollection);
 
-            IServiceProvider serviceProvider = serviceCollection.BuildServiceProvider();
+        IServiceProvider serviceProvider = serviceCollection.BuildServiceProvider();
 
-            return serviceProvider;
-        }
+        return serviceProvider;
+    }
 
-        private static void AddDependencies(IServiceCollection serviceCollection)
-        {
-            serviceCollection.AddTransient<App>();
+    private static void AddDependencies(IServiceCollection serviceCollection)
+    {
+        serviceCollection.AddTransient<App>();
 
-            serviceCollection.AddScoped<ITriangleTypeResolverFactory, TriangleTypeResolverFactory>();
-            serviceCollection.AddScoped<ITriangleTypeService, TriangleTypeService>();
-        }
+        serviceCollection.AddScoped<ITriangleTypeResolverFactory, TriangleTypeResolverFactory>();
+        serviceCollection.AddScoped<ITriangleTypeService, TriangleTypeService>();
     }
 }

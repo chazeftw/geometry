@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Geometry.Abstractions.Triangle;
+namespace Geometry.Domain.Abstractions;
 
 public interface ITriangleTypeService
 {

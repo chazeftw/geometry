@@ -1,22 +1,21 @@
-﻿namespace Geometry.App.Utility
+﻿namespace Geometry.App.Utility;
+
+internal static class InputValidator
 {
-    internal static class InputValidator
+    internal static bool IsValidTriangleSide(string side)
     {
-        internal static bool IsValidTriangleSide(string side)
+        if (string.IsNullOrEmpty(side))
         {
-            if (string.IsNullOrEmpty(side))
-            {
-                return false;
-            }
-
-            var canParse = uint.TryParse(side, out var sideValue);
-
-            if (sideValue == 0)
-            {
-                return false;
-            }
-
-            return canParse;
+            return false;
         }
+
+        var canParse = uint.TryParse(side, out var sideValue);
+
+        if (sideValue == 0)
+        {
+            return false;
+        }
+
+        return canParse;
     }
 }
