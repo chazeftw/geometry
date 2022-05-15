@@ -1,4 +1,4 @@
-﻿using System;
+﻿using FluentAssertions;
 using Geometry.Domain;
 using Xunit;
 
@@ -7,8 +7,10 @@ namespace Geometry.Logic.Tests;
 public class TriangleTests
 {
     [Fact]
-    public void Given_triangle_When_measurements_invalid_Then_throw_argument_exception()
+    public void Given_triangle_When_measurements_doesnt_form_a_valid_triangle_Then_should_be_invalid()
     {
-        Assert.Throws<ArgumentException>(() => new Triangle(1, 10, 12));
+        var triangle = new Triangle(1, 10, 12);
+
+        triangle.IsValidTriangle().Should().BeFalse();
     }
 }

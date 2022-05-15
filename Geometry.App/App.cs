@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using Geometry.App.Utility;
 using Geometry.Domain;
 using Geometry.Domain.Abstractions;
@@ -17,32 +16,32 @@ public class App
 
     public void Run()
     {
-        Console.WriteLine("Please input 3 sides of a triangle");
-
         var triangle = GetTriangleFromInput();
 
         var triangleTypes = _triangleTypeService.DetermineTypes(triangle);
 
-        Console.WriteLine($"The triangle is the following type{(triangleTypes.Count() > 1 ? "s" : string.Empty)}:");
+        Console.WriteLine($"The triangle is the following type{(triangleTypes.Count > 1 ? "s" : string.Empty)}:");
         foreach (var triangleType in triangleTypes)
         {
             Console.WriteLine(triangleType);
         }
     }
 
-    private static Triangle GetTriangleFromInput()
+    private static ITriangle GetTriangleFromInput()
     {
-        uint a, b, c;
+        Triangle triangle;
 
         do
         {
-            a = GetSideFromConsole("A: ");
-            b = GetSideFromConsole("B: ");
-            c = GetSideFromConsole("C: ");
+            Console.WriteLine("Input 3 sides of a valid triangle");
 
-        } while (!CanCreateValidTriangle(a, b, c));
+            var a = GetSideFromConsole("A: ");
+            var b = GetSideFromConsole("B: ");
+            var c = GetSideFromConsole("C: ");
+            triangle = new Triangle(a, b, c);
+        } while (!triangle.IsValidTriangle());
 
-        return new Triangle(a, b, c);
+        return triangle;
     }
 
     private static uint GetSideFromConsole(string inputMessage)
@@ -57,21 +56,5 @@ public class App
         } while (!InputValidator.IsValidTriangleSide(side));
 
         return uint.Parse(side);
-    }
-
-    private static bool CanCreateValidTriangle(uint a, uint b, uint c)
-    {
-        try
-        {
-            var triangle = new Triangle(a, b, c);
-
-            return true;
-        }
-        catch (ArgumentException)
-        {
-            Console.WriteLine("Measurements does not form a valid triangle. Please try again.");
-
-            return false;
-        }
     }
 }

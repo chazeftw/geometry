@@ -1,5 +1,4 @@
 ﻿using System;
-using Geometry.Domain;
 using Geometry.Domain.Abstractions;
 using Geometry.Domain.Factories;
 using Geometry.Domain.Services;
@@ -18,23 +17,25 @@ internal static class Program
     {
         var serviceProvider = BuildServiceProvider();
 
-        serviceProvider.GetService<App>()!.Run();
+        serviceProvider
+            .GetService<App>()!
+            .Run();
     }
 
     private static IServiceProvider BuildServiceProvider()
     {
         var serviceCollection = new ServiceCollection();
 
-        AddDependencies(serviceCollection);
+        ConfigureServices(serviceCollection);
 
-        IServiceProvider serviceProvider = serviceCollection.BuildServiceProvider();
+        var serviceProvider = serviceCollection.BuildServiceProvider();
 
         return serviceProvider;
     }
 
-    private static void AddDependencies(IServiceCollection serviceCollection)
+    private static void ConfigureServices(IServiceCollection serviceCollection)
     {
-        serviceCollection.AddTransient<App>();
+        serviceCollection.AddSingleton<App>();
 
         serviceCollection.AddScoped<ITriangleTypeResolverFactory, TriangleTypeResolverFactory>();
         serviceCollection.AddScoped<ITriangleTypeService, TriangleTypeService>();
