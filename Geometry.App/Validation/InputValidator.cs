@@ -1,4 +1,4 @@
-﻿namespace Geometry.App.Utility;
+﻿namespace Geometry.App.Validation;
 
 internal static class InputValidator
 {

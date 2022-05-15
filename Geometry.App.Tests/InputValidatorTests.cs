@@ -1,5 +1,5 @@
 using FluentAssertions;
-using Geometry.App.Utility;
+using Geometry.App.Validation;
 using Xunit;
 
 namespace Geometry.App.Tests;

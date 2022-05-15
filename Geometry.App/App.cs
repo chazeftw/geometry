@@ -1,5 +1,5 @@
 ﻿using System;
-using Geometry.App.Utility;
+using Geometry.App.Validation;
 using Geometry.Domain;
 using Geometry.Domain.Abstractions;
 
