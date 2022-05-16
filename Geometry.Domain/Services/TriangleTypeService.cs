@@ -6,16 +6,16 @@ namespace Geometry.Domain.Services;
 
 public class TriangleTypeService : ITriangleTypeService
 {
-    private readonly ITriangleTypeResolverFactory _factory;
+    private readonly ITriangleTypeResolverFactory _triangleTypeResolverFactory;
 
-    public TriangleTypeService(ITriangleTypeResolverFactory factory)
+    public TriangleTypeService(ITriangleTypeResolverFactory triangleTypeResolverFactory)
     {
-        _factory = factory;
+        _triangleTypeResolverFactory = triangleTypeResolverFactory;
     }
 
     public IReadOnlyCollection<TriangleType> DetermineTypes(ITriangle triangle)
     {
-        var resolvers = _factory.CreateResolvers();
+        var resolvers = _triangleTypeResolverFactory.CreateResolvers();
 
         var types = resolvers
             .Select(triangleTypeResolver => triangleTypeResolver.ResolveType(triangle));
